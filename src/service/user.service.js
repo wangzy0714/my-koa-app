@@ -7,8 +7,7 @@ class UserService {
       user_name,
       password,
     });
-
-    return res;
+    return res.dataValues;
   }
   async getUserInfo({ id, user_name, password, is_admin }) {
     const whereOpt = {};
@@ -20,7 +19,7 @@ class UserService {
       attributes: ['id', 'user_name', 'password', 'is_admin'],
       where: whereOpt,
     });
-    return res ? res : null;
+    return res ? res.dataValues : null;
   }
 }
 export default new UserService();
