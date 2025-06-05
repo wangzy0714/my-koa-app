@@ -9,6 +9,6 @@ userRouter.get('/', async (ctx, next) => {
 });
 
 // 使用导入的控制器
-userRouter.get('/register', userController.register);
+userRouter.post('/register', userController.register);
 userRouter.post('/login', userController.login);
 export default userRouter;
